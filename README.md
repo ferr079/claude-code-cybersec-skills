@@ -1,18 +1,41 @@
 # Claude Code Cybersecurity Skills
 
-31 cybersecurity slash commands for [Claude Code](https://claude.com/product/claude-code) — covering offensive security (CTF/pentest) and defensive operations (blue team/hardening).
+31 cybersecurity runbooks packaged as a [Claude Code](https://claude.com/product/claude-code) plugin — 17 offensive (CTF, pentest) and 14 defensive (blue team, hardening), each with MITRE ATT&CK references.
 
-Based on [Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) by mukul975, reformatted as Claude Code slash commands with MITRE ATT&CK references.
+Every skill is a structured runbook Claude follows interactively: concrete commands, expected output, and what to do with it. Nothing runs on its own — you stay in the loop at each step.
 
-## Installation
+Based on [Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) by mukul975 (~27k stars), reformatted for Claude Code.
 
-Copy the `commands/cybersec/` directory to your Claude Code commands folder:
+## Install
 
-```bash
-cp -r commands/cybersec/ ~/.claude/commands/cybersec/
+```
+/plugin marketplace add ferr079/claude-code-cybersec-skills
+/plugin install cybersec@ferr079-cybersec
+/reload-plugins
 ```
 
-The skills will be available globally as `/cybersec:<name>` in any Claude Code session.
+Then invoke a runbook by name:
+
+```
+/cybersec:nmap-advanced
+/cybersec:wazuh-detection
+```
+
+Claude also pulls a skill on its own when the task calls for it — each one carries a `description` stating when it applies.
+
+<details>
+<summary>Other ways to install</summary>
+
+**Try it without installing** — load the plugin for a single session:
+
+```bash
+git clone https://github.com/ferr079/claude-code-cybersec-skills
+claude --plugin-dir ./claude-code-cybersec-skills
+```
+
+**Pick individual skills** — each `skills/<name>/SKILL.md` is self-contained; copy the folders you want into `~/.claude/skills/`. They then answer to `/<name>` instead of `/cybersec:<name>`.
+
+</details>
 
 ## Tier 1 — Offensive / CTF / Pentest (17 skills)
 
@@ -36,6 +59,8 @@ The skills will be available globally as `/cybersec:<name>` in any Claude Code s
 | `/cybersec:binary-exploit` | Binary exploitation analysis |
 | `/cybersec:race-condition` | Race condition exploitation |
 
+> Offensive skills are written for **authorized engagements and CTF targets**. Each one states its authorization prerequisite, and several open with an explicit "do not use" section. Read it.
+
 ## Tier 2 — Blue Team / Defensive (14 skills)
 
 | Command | Description |
@@ -57,8 +82,6 @@ The skills will be available globally as `/cybersec:<name>` in any Claude Code s
 
 ## Usage
 
-Each skill provides a structured runbook that Claude Code follows interactively:
-
 ```
 > /cybersec:nmap-advanced
 
@@ -66,12 +89,24 @@ Target: 10.10.10.x
 Starting reconnaissance...
 ```
 
-The skills guide Claude through the complete workflow — from reconnaissance to exploitation or from detection to remediation — with concrete commands and MITRE ATT&CK references.
+Each skill walks the complete workflow — reconnaissance to exploitation, or detection to remediation — with concrete commands and MITRE ATT&CK mappings.
+
+## Repository layout
+
+```
+.claude-plugin/
+  plugin.json        plugin manifest (namespace: cybersec)
+  marketplace.json   catalog, so the repo installs directly
+skills/
+  <name>/SKILL.md    one runbook per skill: frontmatter + body
+```
+
+These runbooks previously shipped as flat `commands/cybersec/*.md` files. Slash commands and skills are now the same mechanism in Claude Code, and the skill layout adds what flat files could not carry: a `description` that lets Claude pull the right runbook on its own, and a folder per skill for supporting files. Invocation names are unchanged.
+
+## Credits
+
+Original skills by [mukul975/Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills). Repackaged as a Claude Code plugin, with MITRE ATT&CK references.
 
 ## License
 
 MIT
-
-## Credits
-
-Original skills by [mukul975/Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) (~27k stars). Reformatted for Claude Code slash command format.
