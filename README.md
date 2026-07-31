@@ -1,6 +1,6 @@
 # Claude Code Cybersecurity Skills
 
-31 cybersecurity slash commands for [Claude Code](https://claude.ai/claude-code) — covering offensive security (CTF/pentest) and defensive operations (blue team/hardening).
+31 cybersecurity slash commands for [Claude Code](https://claude.com/product/claude-code) — covering offensive security (CTF/pentest) and defensive operations (blue team/hardening).
 
 Based on [Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) by mukul975, reformatted as Claude Code slash commands with MITRE ATT&CK references.
 
@@ -74,4 +74,4 @@ MIT
 
 ## Credits
 
-Original skills by [mukul975/Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) (~3.8k stars). Reformatted for Claude Code slash command format.
+Original skills by [mukul975/Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills) (~27k stars). Reformatted for Claude Code slash command format.
