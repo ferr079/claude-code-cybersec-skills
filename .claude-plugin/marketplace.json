@@ -1,0 +1,15 @@
+{
+  "name": "ferr079-cybersec",
+  "description": "Cybersecurity runbooks for Claude Code: offensive (CTF, pentest) and defensive (blue team, hardening) skills.",
+  "owner": {
+    "name": "Stéphane Ferreira",
+    "url": "https://pixelium.win"
+  },
+  "plugins": [
+    {
+      "name": "cybersec",
+      "source": "./",
+      "description": "31 cybersecurity runbooks for Claude Code — 17 offensive (CTF, pentest) and 14 defensive (blue team, hardening), with MITRE ATT&CK references."
+    }
+  ]
+}

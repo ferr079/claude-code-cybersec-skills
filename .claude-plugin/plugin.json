@@ -1,0 +1,12 @@
+{
+  "name": "cybersec",
+  "description": "31 cybersecurity runbooks for Claude Code — 17 offensive (CTF, pentest) and 14 defensive (blue team, hardening), with MITRE ATT&CK references.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Stéphane Ferreira",
+    "url": "https://pixelium.win"
+  },
+  "homepage": "https://github.com/ferr079/claude-code-cybersec-skills",
+  "repository": "https://github.com/ferr079/claude-code-cybersec-skills",
+  "license": "MIT"
+}
