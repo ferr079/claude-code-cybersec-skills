@@ -1,0 +1,9 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Faux positifs identifiés (pixelium/web#102)"
+regexes = [
+  # URL d'exemple dans les runbooks : la règle curl-auth-user lit « {{ » comme des identifiants
+  '''https?://target\.example\.com''',
+]
